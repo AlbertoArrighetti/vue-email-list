@@ -27,10 +27,12 @@
 
 
             <!-- creo la lista  -->
-            <ul class="list-group">
+            <ul 
+            class="list-group"
+            >
                 <!-- creo un ciclo for per ogni elemento presente nel mio array -->
                 <li
-                v-for="(email, index) in emailList" 
+                v-for="email in emailList" 
                 class="list-group-item"
                 >
                     {{ email }}
