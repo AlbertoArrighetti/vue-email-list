@@ -21,11 +21,23 @@
 
     <div id="app" class="container py-5">
        
-        <!-- creo la lista  -->
-        <ul>
-            <!-- visualizzo l'elememto in pagina -->
-            <li>{{randomEmail}}</li>
-        </ul>
+
+        <div class="container">
+            <h1 class="mb-5">Lista Email</h1>
+
+
+            <!-- creo la lista  -->
+            <ul class="list-group">
+                <!-- creo un ciclo for per ogni elemento presente nel mio array -->
+                <li
+                v-for="(email, index) in emailList" 
+                class="list-group-item"
+                >
+                    {{ email }}
+                </li>
+            </ul>
+        </div>
+       
 
 
     </div>
