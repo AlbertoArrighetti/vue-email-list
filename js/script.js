@@ -5,16 +5,18 @@ createApp({
         return {
             // creo un array vuoto in cui conterrò tutte le mie emails
             emailList: [],
+
+            num: '',
         }
     },
 
     methods: {
         // creo una funzione per generare 10 email
-        emailsGen() {
+        emailsGen(num) {
             // genero un array che mi tenga in "standby" le email finchè non sono tutte generate 
             const provisionalEmails = [];
 
-            for(let i = 0; i < 10; i++) {
+            for(let i = 0; i < num; i++) {
                 // per ogni iterazione genero una mail dall'API  e la salvo nell'array precente 
                 provisionalEmails.push(axios.get('https://flynn.boolean.careers/exercises/api/random/mail')); 
             }
@@ -27,11 +29,5 @@ createApp({
             })
 
         }
-    },
-    
-    // al caricamento della pagina:
-    mounted() {
-        // richiamo la mia funzione
-        this.emailsGen();
     },
 }).mount('#app');

@@ -23,10 +23,41 @@
        
 
         <div class="container">
-            <h1 class="mb-5">Lista Email</h1>
 
 
             <!-- creo la lista  -->
+            <div>
+                <!-- decido quante email generare -->
+                <label for="numSelector" class="mb-5">
+                    <h2>
+                        Quante email vuoi generare?
+                    </h2>
+                    <span>inserisci un numero massimo di 20</span>
+                </label>
+
+
+                
+                <div class="input-group mb-3 w-50 ">
+                    <input 
+                    v-model="num"  
+                    type="number" class="form-control" id="numSelector" min="0">
+
+
+                    <button 
+                    :class="num <= 20 ? '' : 'block btn-warning' "
+
+                    @click="this.emailsGen(this.num)"
+                    type="button" class="btn btn-primary"
+                    >Genera</button>
+
+                </div>
+
+                
+                
+
+            </div>
+
+
             <ul 
             class="list-group"
             >
